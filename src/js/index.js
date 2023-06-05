@@ -23,11 +23,8 @@ const swiper = new Swiper('.swiper', {
   }
 })
 
-const serviceDevicesMore = document.querySelector('.service-devices__more')
-const serviceDevicesBlocks = document.querySelector('.service-devices__buttons')
 const body = document.querySelector('body')
 
-const serviceParagraph = document.querySelector('.service__paragraph')
 const headerBurger = document.querySelector('.header__burger')
 const asideMenuBurger = document.querySelector('.aside-menu__burger')
 const asideMenu = document.querySelector('.aside-menu')
@@ -47,28 +44,25 @@ const headerCall = document.querySelector('.header__call')
 const asideMenuCall = document.querySelector('.aside-menu__call')
 const asideCallOver = document.querySelector('.aside-call__overlay')
 
+const buttonBrands = document.querySelector('.servise-brands__button-more-text');
+const buttonAdvantages = document.querySelector('.service-advantages__button-more-text');
+const buttonService = document.querySelector('.service__button-more-text');
 
-//servicelist.forEach((item) => {
-//item.addEventListener('click', (e) => {
-//  servicelist.forEach((el) => {
-//   el.classList.remove('active')
-// })
-// item.classList.add('active')
-//})
-//})
+const cardsOpenBrands = document.querySelector('.servise-brands__swiper-container');
+const cardsOpendAdvantages = document.querySelector('.service-advantages__swiper-container');
+const serviceMore = document.querySelector('.service__paragraph')
 
-//list.forEach((item) => {
-// item.addEventListener('click', (e) => {
-//  list.forEach((el) => {
-//   el.classList.remove('active')
-// })
-// item.classList.add('active')
-//})
-//})
+const buttonTextBrands = document.querySelector('.servise-brands__more-text');
+const buttonTextAdvantages = document.querySelector('.service-advantages__more-text');
+const buttonTextService = document.querySelector('.service__more-text');
+
+const imgBrands = document.querySelector('.servise-brands__more-img');
+const imgAdvantages = document.querySelector('.service-advantages__more-img');
+const imgService = document.querySelector('.service__more-img');
+
 
 function handleHeaderBurgerClick() {
   asideMenu.classList.add('aside-menu--show')
-  //asideMenuWrap.classList.add('aside-menu--show')
   body.classList.add('disable-scroll')
 }
 
@@ -78,7 +72,6 @@ headerBurger.addEventListener('click', function (event) {
 
 function handleBurgerClick() {
   asideMenu.classList.remove('aside-menu--show')
-  //asideMenuWrap.classList.remove('aside-menu--show')
   body.classList.remove('disable-scroll')
 }
 
@@ -88,27 +81,12 @@ asideMenuBurger.addEventListener('click', function (event) {
 
 function handleAsideOverClick() {
   asideMenu.classList.remove('aside-menu--show')
-  //asideMenuWrap.classList.remove('aside-menu--show')
   body.classList.remove('disable-scroll')
 }
 
 asideMenuOver.addEventListener('click', function (event) {
   handleAsideOverClick();
 });
-
-//serviceAdvantagesMore.onclick = function () {
-// serviceAdvantagesBlocks.classList.toggle('service-advantages__buttons--open')
-// serviceAdvantagesMore.classList.toggle('service-advantages__more--open')
-// if (
-//   serviceAdvantagesBlocks.classList.contains(
-//    'service-advantages__buttons--open'
-//   )
-// ) {
-//   serviceAdvantagesMore.textContent = 'Скрыть'
-// } else {
-//   serviceAdvantagesMore.textContent = 'Показать все'
-// }
-//}
 
 function handleChatFeedbackClick() {
   asideFeedbackWrap.classList.add('aside-feedback__wrapper--show')
@@ -191,22 +169,6 @@ function handleCallOverClick() {
 asideCallOver.addEventListener('click', function (event) {
   handleCallOverClick();
 });
-
-const buttonBrands = document.querySelector('.servise-brands__button-more-text');
-const buttonAdvantages = document.querySelector('.service-advantages__button-more-text');
-const buttonService = document.querySelector('.service__button-more-text');
-
-const cardsOpenBrands = document.querySelector('.servise-brands__swiper-container');
-const cardsOpendAdvantages = document.querySelector('.service-advantages__swiper-container');
-const serviceMore = document.querySelector('.service__paragraph')
-
-const buttonTextBrands = document.querySelector('.servise-brands__more-text');
-const buttonTextAdvantages = document.querySelector('.service-advantages__more-text');
-const buttonTextService = document.querySelector('.service__more-text');
-
-const imgBrands = document.querySelector('.servise-brands__more-img');
-const imgAdvantages = document.querySelector('.service-advantages__more-img');
-const imgService = document.querySelector('.service__more-img');
 
 buttonBrands.addEventListener("click", buttonClickBrands);
 buttonAdvantages.addEventListener("click", buttonClickAdvantages);

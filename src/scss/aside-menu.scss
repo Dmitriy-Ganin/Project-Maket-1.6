@@ -1,0 +1,223 @@
+@import 'fonts.scss', 'color.scss';
+
+.aside-menu {
+  visibility: hidden;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: -100%;
+  top: 0;
+  z-index: 200;
+  margin: 0 auto;
+  transition: 0.7s;
+
+  &__wrapper {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 320px;
+    height: 100%;
+    background-color: $backgroundColor;
+    border-bottom: 1px solid $border;
+    z-index: 150;
+    transition: 0.7s;
+    overflow-y: scroll;
+
+  }
+
+  &--show {
+    visibility: visible;
+    opacity: 1;
+    left: 0;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $backgroundColor;
+    opacity: 0.92;
+  }
+
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+
+  &__logo {
+    margin-right: auto;
+    margin-left: 17px;
+  }
+
+  &__main {
+    margin-bottom: 32px;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  &__item {
+    padding-left: 24px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    color: $text;
+  }
+
+  &__link:hover,
+  &__link--active {
+    color: $border;
+    transition: 0.2s;
+  }
+
+  &__link:hover::before,
+  &__link--active::before {
+    content: "";
+    width: 4px;
+    height: 32px;
+    position: absolute;
+    transform: translate(-24px);
+    border-right: $border 4px solid;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+
+  &__nav:hover &__link--active {
+    color: $text;
+    transition: 0.2s;
+  }
+
+  &__nav:hover &__link--active::before {
+    content: "";
+    width: 0px;
+    height: 0px;
+  }
+
+  &__nav &__link--active:hover::before {
+    content: "";
+    width: 4px;
+    height: 32px;
+    position: absolute;
+    transform: translate(-24px);
+    border-right: $border 4px solid;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+
+  &__nav &__link--active:hover {
+    color: $border;
+    transition: 0.2s;
+  }
+
+  &__footer {
+    margin-left: 24px;
+    margin-bottom: 32px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__email-address {
+    display: block;
+    text-decoration: none;
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+    color: $text;
+  }
+
+  &__tel-numb {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-family: 'TT Lakes Bold';
+    font-size: 24px;
+    line-height: 32px;
+    text-align: left;
+    color: $text;
+  }
+
+  &__lang {
+    appearance: none;
+    color: $text;
+  }
+
+  &__lang:checked+&__abbreviation {
+    color: $title;
+  }
+
+  &__abbreviation {
+    margin-right: 7px;
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .aside-menu {
+    width: 100%;
+
+    &__wrapper {
+      max-width: 320px;
+      box-shadow: -2px 0px 4px $box-shadow-1, 16px 0px 52px $box-shadow-2;
+    }
+
+    .aside__main {
+      margin-bottom: auto;
+    }
+
+    &__header {
+      max-width: 320px;
+    }
+  }
+}
+
+
+@media screen and (min-width: 1440px) {
+
+  .aside-menu {
+    visibility: visible;
+    opacity: 1;
+    position: sticky;
+    top: 0;
+    left: 0;
+    margin: 0;
+    min-width: 320px;
+    z-index: 1;
+
+    &__wrapper {
+      box-shadow: none;
+    }
+
+    &__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    &__button-close {
+      display: none;
+    }
+
+    &__logo {
+      margin-left: 24px;
+    }
+  }
+}

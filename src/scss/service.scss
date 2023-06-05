@@ -1,0 +1,180 @@
+@import 'fonts.scss', 'color.scss';
+
+.service {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-top: 24px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  background-color: $service;
+
+  &__title-text {
+    font-family: 'TT Lakes Bold';
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: -0.6px;
+    text-align: left;
+    border-left: 4px solid $border;
+    padding-left: 12px;
+    margin-left: -16px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+
+  &__image {
+    min-width: 320px;
+    margin-left: -16px;
+  }
+
+  &__info {
+    min-width: 304px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    text-align: left;
+    min-width: 304px;
+    margin-bottom: 20px;
+  }
+
+  &__paragraph {
+    overflow-y: hidden;
+    min-width: 288px;
+    max-width: 490px;
+    margin-bottom: 16px;
+    max-height: 145px;
+    transition: 0.7s;
+  }
+
+  &__paragraph--open {
+    max-height: 400px;
+    transition: 0.7s;
+  }
+
+  &__slide-menu {
+    overflow: auto;
+  }
+
+  &__slide-menu::-webkit-scrollbar {
+    width: 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    padding-top: 16px;
+  }
+
+  &__list:hover &__link--active {
+    background-color: $service;
+    border: 2px solid transparent;
+    border-radius: 0;
+  }
+
+  &__item &__link--active:hover {
+    background-color: $backgroundColor;
+    border: 2px solid $border;
+    border-radius: 6px;
+  }
+
+  &__link,
+  &__link--active {
+    display: inline-block;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 16px;
+    padding-right: 16px;
+    color: $text;
+    white-space: nowrap;
+    border: 2px solid transparent;
+  }
+
+  &__link:hover,
+  &__link--active {
+    background-color: $backgroundColor;
+    border: 2px solid $border;
+    border-radius: 6px;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .service {
+    padding: 24px;
+
+    &__title-text {
+      padding-left: 20px;
+      margin-left: -24px;
+    }
+
+    &__info {
+      flex-wrap: nowrap;
+      margin-top: 24px;
+    }
+
+    &__image {
+      width: 100%;
+      max-width: 360px;
+      margin: 0;
+    }
+
+    &__text {
+      min-width: 312px;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .service {
+    padding: 24px;
+    padding-top: 42px;
+    width: 100%;
+    max-width: 1120px;
+    min-height: 535px;
+    margin-left: 320px;
+
+    &__actions {
+      margin-left: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 140px;
+    }
+
+    &__title {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__title-text {
+      min-width: 490px;
+    }
+
+    &__image {
+      max-width: 531px;
+      max-height: 307px;
+      margin: 0;
+    }
+
+    &__info {
+      min-width: 1120px;
+    }
+
+    &__list {
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding-right: 32px;
+      padding-top: 8px;
+    }
+  }
+}

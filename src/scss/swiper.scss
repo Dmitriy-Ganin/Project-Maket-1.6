@@ -1,0 +1,22 @@
+@import 'fonts.scss', 'color.scss';
+
+.swiper {
+  width: 100%;
+}
+
+.swiper-wrapper {
+  padding-left: 16px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+@media screen and (min-width: 767px) {
+  .pagination {
+    display: none;
+  }
+}

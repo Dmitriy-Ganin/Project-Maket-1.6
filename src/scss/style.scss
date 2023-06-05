@@ -1,0 +1,157 @@
+@import 'fonts.scss';
+@import'color.scss';
+@import 'fonts.scss';
+@import 'color.scss';
+@import 'header.scss';
+@import'aside-menu.scss';
+@import 'service.scss';
+@import'service-brands.scss';
+@import 'swiper.scss';
+@import'service-prices.scss';
+@import 'footer.scss';
+@import'aside-feedback.scss';
+@import'service-advantages.scss';
+@import'aside-call.scss';
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: 0;
+  background: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body {
+  font-family: 'TT Lakes Regular';
+  color: $text;
+}
+
+body.disable-scroll {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.page {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.button-transition {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.button-transition img {
+  width: 40px;
+  height: 40px;
+  background-color: $button;
+  border-radius: 50%;
+}
+
+.button-submit {
+  cursor: pointer;
+  width: 119px;
+  height: 32px;
+  border-radius: 16px;
+  border: $button;
+  background-color: $button;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 12px;
+}
+
+.button-submit-text {
+  color: $backgroundColor;
+  font-family: 'TT Lakes Bold';
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  text-transform: uppercase;
+}
+
+.button-transition:hover img,
+.button-submit:hover,
+.buttons-internal:hover,
+.swiper-slide:hover {
+  box-shadow: 1px 1px 5px -1px $box-shadow-button;
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.button-text {
+  cursor: pointer;
+}
+
+.button-text:hover {
+  transition: all 0.3s ease-in-out;
+  color: $button;
+}
+
+.title-header {
+  color: $title;
+  background: $headerGradient;
+}
+
+.button-more-text {
+  display: none;
+}
+
+.open-img {
+  margin-right: 9px;
+}
+
+.more-text {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+
+@media screen and (min-width: 767px) {
+
+  .button-more-text {
+    cursor: pointer;
+    display: block;
+    margin-left: 32px;
+    margin-top: 24px;
+    padding-bottom: 34px;
+    background-color: inherit;
+  }
+
+  .button-more-text:hover .more-text {
+    transition: all 0.3s ease-in-out;
+    color: $button;
+  }
+
+  .button-more-text--opened {
+    margin-top: 36px;
+  }
+
+  .button-more-text--close {
+    margin-top: 24px;
+  }
+
+  .arrows_rotate {
+    transition: all 0.5s;
+    transform: rotate(180deg);
+    margin-right: 9px;
+  }
+}

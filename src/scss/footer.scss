@@ -1,0 +1,45 @@
+@import 'fonts.scss', 'color.scss';
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 105px;
+  max-height: 147px;
+  padding-top: 24px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  background-color: $service;
+  border-top: 1px solid $border;
+  color: $title;
+
+  &__privacy-policy {
+    text-decoration: none;
+    color: $title;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0px 24px;
+    &__information {
+      text-align: right;
+      max-width: 320px;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .footer {
+    width: 100%;
+    max-width: 1120px;
+    margin-left: 320px;
+  }
+}

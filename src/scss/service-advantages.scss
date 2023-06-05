@@ -1,0 +1,92 @@
+@import 'fonts.scss', 'color.scss';
+
+.service-advantages {
+  &__header {
+    font-size: 16px;
+    line-height: 24px;
+    color: $title;
+    text-transform: uppercase;
+    background-color: $backgroundColor;
+    padding: 24px;
+    margin-left: -24px;
+    border-top: 1px solid $border;
+  }
+
+  &__swiper-container {
+    overflow: hidden;
+    max-height: 200px;
+    margin: 0 auto;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &__swiper-container--open {
+    max-height: 1190px;
+    overflow-y: hidden;
+    -ms-overflow-style: none;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &__swiper-wrapper {
+    display: flex;
+    padding-top: 16px;
+  }
+
+  &__swiper-slide {
+    background-color: $backgroundColor;
+    border: 1px solid $divider;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    min-height: 72px;
+  }
+
+  &__slide {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 240px;
+    height: 160px;
+    background-color: $backgroundColor;
+    border: 1px solid $divider;
+    border-radius: 6px;
+    padding: 16px;
+  }
+
+  &__next {
+    cursor: pointer;
+    margin-left: auto;
+  }
+}
+
+
+@media screen and (min-width: 767px) {
+  .service-advantages {
+    &__swiper-wrapper {
+      flex-wrap: wrap;
+      flex-direction: row;
+      padding-left: 24px;
+      padding-right: 24px;
+      row-gap: 24px;
+      width: auto;
+      padding-bottom: 10px;
+    }
+
+    &__swiper-slide {
+      min-width: 100px;
+      max-width: 224px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .service-advantages {
+    &__swiper-wrapper {
+      padding-right: 0px;
+    }
+  }
+}
